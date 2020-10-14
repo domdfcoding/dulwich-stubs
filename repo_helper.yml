@@ -1,0 +1,21 @@
+# Configuration for 'repo_helper' (https://github.com/domdfcoding/repo_helper)
+---
+modname: 'dulwich-stubs'
+copyright_years: '2020'
+author: 'Dominic Davis-Foster'
+email: 'dominic@davis-foster.co.uk'
+username: 'domdfcoding'
+version: '0.20.0'
+license: 'Apache 2'
+short_desc: 'Type stubs for dulwich.'
+
+enable_conda: False
+enable_tests: False
+enable_docs: False
+
+python_versions:
+  - 3.6
+  - 3.7
+  - 3.8
+
+stubs_package: True
