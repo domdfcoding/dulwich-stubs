@@ -18,10 +18,12 @@
 # License, Version 2.0.
 #
 
-from dulwich.objects import TreeEntry
+# stdlib
 from typing import Any, Iterable, Iterator, NamedTuple, Optional, Tuple
 
+# this package
 from dulwich.object_store import BaseObjectStore
+from dulwich.objects import TreeEntry
 
 CHANGE_ADD: str
 CHANGE_MODIFY: str

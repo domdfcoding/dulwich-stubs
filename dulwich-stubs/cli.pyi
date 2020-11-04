@@ -1,4 +1,6 @@
+# stdlib
 from typing import Any, Dict, NoReturn, Optional, Type
+
 
 def signal_int(signal: Any, frame: Any) -> NoReturn: ...
 def signal_quit(signal: Any, frame: Any) -> None: ...

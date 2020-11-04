@@ -1,7 +1,11 @@
+# stdlib
+from typing import Any, Iterable, List, Optional, Tuple, Union
+
+# this package
+import dulwich.contrib.paramiko_vendor
 from dulwich.config import ConfigDict
 from dulwich.errors import SendPackError
-from typing import Any, Iterable, List, Optional, Tuple, Union
-import dulwich.contrib.paramiko_vendor
+
 
 class InvalidWants(Exception):
     def __init__(self, wants: Any) -> None: ...

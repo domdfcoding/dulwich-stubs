@@ -20,8 +20,12 @@
 # License, Version 2.0.
 #
 
-from dulwich.object_store import MissingObjectFinder, ObjectStoreIterator
+# stdlib
 from typing import Any, Optional
+
+# this package
+from dulwich.object_store import MissingObjectFinder, ObjectStoreIterator
+
 
 class GreenThreadsMissingObjectFinder(MissingObjectFinder):
 	object_store: Any = ...

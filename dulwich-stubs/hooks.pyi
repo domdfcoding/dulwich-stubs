@@ -18,7 +18,9 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from typing import Any, Optional
+
 
 class Hook:
 	def execute(self, *args: Any, **kwargs: Any): ...

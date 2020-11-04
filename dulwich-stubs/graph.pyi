@@ -19,9 +19,12 @@
 # and <http://www.apache.org/licenses/LICENSE-2.0> for a copy of the Apache
 # License, Version 2.0.
 
+# stdlib
 from typing import AnyStr, List, Union
 
+# this package
 from dulwich.repo import Repo
+
 
 def find_merge_base(repo: Repo, commit_ids: List[Union[str, bytes]]): ...
 def find_octopus_base(repo: Repo, commit_ids: AnyStr) -> List[AnyStr]: ...

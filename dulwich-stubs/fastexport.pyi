@@ -18,8 +18,12 @@
 # License, Version 2.0.
 #
 
-from fastimport import processor  # type: ignore
+# stdlib
 from typing import Any, Dict, NoReturn, Optional, Tuple, TypeVar
+
+# 3rd party
+from fastimport import processor  # type: ignore
+
 
 def split_email(text: bytes) -> Tuple[bytes, bytes]: ...
 

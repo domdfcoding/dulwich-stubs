@@ -17,12 +17,15 @@
 # and <http://www.apache.org/licenses/LICENSE-2.0> for a copy of the Apache
 # License, Version 2.0.
 #
+
+# stdlib
 import sys
-from typing import Any, IO, Set, Tuple, TypeVar, Union
+from typing import IO, Any, Set, Tuple, TypeVar, Union
 
 # StrPath and AnyPath can be used in places where a
 # path can be used instead of a string, starting with Python 3.6.
 if sys.version_info >= (3, 6):
+	# stdlib
 	from os import PathLike
 
 	StrPath = Union[str, PathLike[str]]

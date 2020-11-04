@@ -1,4 +1,6 @@
+# stdlib
 from typing import Any, Iterator, Optional
+
 
 class ChunkedBytesIO:
 	contents: Any = ...

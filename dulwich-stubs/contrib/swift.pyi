@@ -1,10 +1,14 @@
+# stdlib
+from typing import Any, Optional
+
+# this package
 from dulwich.greenthreads import GreenThreadsMissingObjectFinder, GreenThreadsObjectStoreIterator
 from dulwich.object_store import PackBasedObjectStore
 from dulwich.pack import Pack, PackData
 from dulwich.refs import InfoRefsContainer
 from dulwich.repo import BaseRepo
 from dulwich.server import Backend
-from typing import Any, Optional
+
 
 class PackInfoObjectStoreIterator(GreenThreadsObjectStoreIterator):
 	def __len__(self): ...

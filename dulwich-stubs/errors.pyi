@@ -19,7 +19,9 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from typing import Any, Optional
+
 
 class ChecksumMismatch(Exception):
 	expected: Any = ...

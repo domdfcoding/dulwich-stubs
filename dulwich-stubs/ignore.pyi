@@ -17,9 +17,13 @@
 # License, Version 2.0.
 #
 
+# stdlib
+from typing import Any, BinaryIO, Iterable, List, Optional, Union
+
+# this package
 from dulwich.config import Config
 from dulwich.repo import Repo
-from typing import Any, BinaryIO, Iterable, List, Optional, Union
+
 
 def translate(pat: bytes) -> bytes: ...
 def read_ignore_patterns(f: BinaryIO) -> Iterable[bytes]: ...

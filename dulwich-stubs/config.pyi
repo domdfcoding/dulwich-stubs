@@ -1,15 +1,6 @@
+# stdlib
 from collections import MutableMapping, OrderedDict
-from typing import (
-	Any,
-	AnyStr,
-	BinaryIO,
-	Iterable,
-	Iterator,
-	List,
-	Optional,
-	Tuple,
-	Union,
-)
+from typing import Any, AnyStr, BinaryIO, Iterable, Iterator, List, Optional, Tuple, Union
 
 SENTINAL: object
 
