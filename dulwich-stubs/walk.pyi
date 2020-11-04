@@ -18,21 +18,13 @@
 # License, Version 2.0.
 #
 
+# stdlib
+from typing import Any, Callable, Iterable, Iterator, List, Optional, Set, Tuple, Type, Union
+
+# this package
 from dulwich.diff_tree import RenameDetector, TreeChange
 from dulwich.object_store import BaseObjectStore
 from dulwich.objects import Commit
-from typing import (
-	Any,
-	Callable,
-	Iterable,
-	Iterator,
-	List,
-	Optional,
-	Set,
-	Tuple,
-	Type,
-	Union,
-)
 
 ORDER_DATE: str
 ORDER_TOPO: str

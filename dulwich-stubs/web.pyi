@@ -19,28 +19,16 @@
 # License, Version 2.0.
 #
 
+# stdlib
 import sys
 from logging import Logger
 from types import TracebackType
+from typing import IO, Any, AnyStr, Callable, Dict, Iterator, List, Match, Optional, Pattern, Tuple, Type, Union
+from wsgiref.simple_server import ServerHandler, WSGIRequestHandler, WSGIServer
 
+# this package
 from dulwich.repo import BaseRepo
 from dulwich.server import Handler
-from typing import (
-	Any,
-	AnyStr,
-	Callable,
-	Dict,
-	IO,
-	Iterator,
-	List,
-	Match,
-	Optional,
-	Pattern,
-	Tuple,
-	Type,
-	Union,
-)
-from wsgiref.simple_server import ServerHandler, WSGIRequestHandler, WSGIServer
 
 logger: Logger
 HTTP_OK: str

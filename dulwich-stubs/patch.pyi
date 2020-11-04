@@ -17,10 +17,13 @@
 # and <http://www.apache.org/licenses/LICENSE-2.0> for a copy of the Apache
 # License, Version 2.0.
 #
-from email.message import Message
 
+# stdlib
+from email.message import Message
+from typing import IO, Any, Optional, Tuple
+
+# this package
 from dulwich.objects import Commit
-from typing import Any, IO, Optional, Tuple
 
 FIRST_FEW_BYTES: int
 

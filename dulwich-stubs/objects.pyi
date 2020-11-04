@@ -19,8 +19,11 @@
 # License, Version 2.0.
 #
 
-from dulwich.errors import FileFormatException
+# stdlib
 from typing import Any, AnyStr, Optional, Type, Union
+
+# this package
+from dulwich.errors import FileFormatException
 
 ZERO_SHA: bytes
 S_IFGITLINK: int

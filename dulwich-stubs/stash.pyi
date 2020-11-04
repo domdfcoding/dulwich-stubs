@@ -18,8 +18,11 @@
 # License, Version 2.0.
 #
 
-from dulwich.reflog import Entry
+# stdlib
 from typing import Any, AnyStr, List, Optional
+
+# this package
+from dulwich.reflog import Entry
 
 DEFAULT_STASH_REF: bytes
 

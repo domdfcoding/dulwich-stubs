@@ -19,24 +19,14 @@
 # License, Version 2.0.
 #
 
+# stdlib
 import socketserver
 from logging import Logger
+from typing import IO, Any, AnyStr, Callable, Dict, Iterable, List, Optional, Set, Tuple, Type
 
+# this package
 from dulwich.objects import Commit
 from dulwich.repo import BaseRepo, Repo
-from typing import (
-	Any,
-	AnyStr,
-	Callable,
-	Dict,
-	IO,
-	Iterable,
-	List,
-	Optional,
-	Set,
-	Tuple,
-	Type,
-)
 
 logger: Logger
 

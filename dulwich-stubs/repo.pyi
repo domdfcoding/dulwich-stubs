@@ -19,9 +19,27 @@
 # License, Version 2.0.
 #
 
+# stdlib
 import os
 from io import BytesIO
+from typing import (
+		IO,
+		Any,
+		Callable,
+		Dict,
+		Iterable,
+		Iterator,
+		List,
+		NoReturn,
+		Optional,
+		Set,
+		Tuple,
+		Type,
+		TypeVar,
+		Union
+		)
 
+# this package
 from dulwich.config import ConfigFile, StackedConfig
 from dulwich.diff_tree import RenameDetector
 from dulwich.hooks import Hook
@@ -30,23 +48,6 @@ from dulwich.line_ending import BlobNormalizer
 from dulwich.object_store import BaseObjectStore, ObjectStoreGraphWalker, ObjectStoreIterator
 from dulwich.objects import Commit, ShaFile
 from dulwich.refs import RefsContainer
-from typing import (
-	Any,
-	Callable,
-	Dict,
-	IO,
-	Iterable,
-	Iterator,
-	List,
-	NoReturn,
-	Optional,
-	Set,
-	Tuple,
-	Type,
-	TypeVar,
-	Union,
-)
-
 from dulwich.walk import Walker
 
 CONTROLDIR: str

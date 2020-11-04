@@ -18,8 +18,9 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from collections import namedtuple
-from typing import Any, IO, Iterator, Tuple
+from typing import IO, Any, Iterator, Tuple
 
 Entry = namedtuple(
 	"Entry", ["old_sha", "new_sha", "committer", "timestamp", "timezone", "message"]

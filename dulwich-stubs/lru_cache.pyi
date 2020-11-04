@@ -18,7 +18,9 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from typing import Any, Callable, Optional
+
 
 class _LRUNode:
 	prev: Any = ...

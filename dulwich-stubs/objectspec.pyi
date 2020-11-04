@@ -18,13 +18,14 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from typing import Any, Iterator, Tuple
 
+# this package
+from dulwich.objects import Commit
+from dulwich.refs import RefsContainer
 from dulwich.repo import Repo
 
-from dulwich.refs import RefsContainer
-
-from dulwich.objects import Commit
 
 def to_bytes(text: Any) -> bytes: ...
 def parse_object(repo: Repo, objectish: Any): ...

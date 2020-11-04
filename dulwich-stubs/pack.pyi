@@ -19,7 +19,8 @@
 # License, Version 2.0.
 #
 
-from typing import Any, IO, Iterator, Optional, Sequence, Tuple
+# stdlib
+from typing import IO, Any, Iterator, Optional, Sequence, Tuple
 
 has_mmap: bool
 OFS_DELTA: int

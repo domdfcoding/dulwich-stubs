@@ -18,7 +18,8 @@
 # License, Version 2.0.
 #
 
-from typing import Any, AnyStr, Dict, IO, Optional, Set
+# stdlib
+from typing import IO, Any, AnyStr, Dict, Optional, Set
 
 SYMREF: bytes
 LOCAL_BRANCH_PREFIX: bytes

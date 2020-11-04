@@ -18,11 +18,14 @@
 # License, Version 2.0.
 #
 
+# stdlib
 import os
 from collections import namedtuple
-from dulwich.repo import BaseRepo, Repo
 from io import RawIOBase
 from typing import Any, Optional, Tuple, Union
+
+# this package
+from dulwich.repo import BaseRepo, Repo
 
 GitStatus = namedtuple("GitStatus", "staged unstaged untracked")
 

@@ -19,7 +19,8 @@
 # License, Version 2.0.
 #
 
-from typing import Any, IO, Iterator, List, Optional, Set, Tuple
+# stdlib
+from typing import IO, Any, Iterator, List, Optional, Set, Tuple
 
 TCP_GIT_PORT: int
 ZERO_SHA: bytes

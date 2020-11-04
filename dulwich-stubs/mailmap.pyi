@@ -18,7 +18,9 @@
 # License, Version 2.0.
 #
 
-from typing import Any, IO, Iterator, Optional
+# stdlib
+from typing import IO, Any, Iterator, Optional
+
 
 def parse_identity(text: Any): ...
 def read_mailmap(f: IO) -> Iterator[Any]: ...
