@@ -16,7 +16,7 @@ dulwich-stubs
 	:widths: 10 90
 
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |codefactor|
+	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
@@ -83,6 +83,10 @@ dulwich-stubs
 .. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 	:target: https://github.com/pre-commit/pre-commit
 	:alt: pre-commit
+
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/dulwich-stubs/master.svg
+	:target: https://results.pre-commit.ci/latest/github/domdfcoding/dulwich-stubs/master
+	:alt: pre-commit.ci status
 
 .. end shields
 
