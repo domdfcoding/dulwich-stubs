@@ -18,22 +18,12 @@
 # License, Version 2.0.
 #
 
+# stdlib
 from collections import namedtuple
+from typing import IO, Any, BinaryIO, Callable, Dict, Iterable, Iterator, List, Optional, Tuple, TypeVar, Union
+
+# this package
 from dulwich.object_store import BaseObjectStore
-from typing import (
-	Any,
-	BinaryIO,
-	Callable,
-	Dict,
-	IO,
-	Iterable,
-	Iterator,
-	List,
-	Optional,
-	Tuple,
-	TypeVar,
-	Union,
-)
 
 IndexEntry = namedtuple(
 	"IndexEntry",
