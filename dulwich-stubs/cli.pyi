@@ -5,9 +5,9 @@ from dulwich.index import Index as Index
 from dulwich.pack import Pack as Pack, sha_to_hex as sha_to_hex
 from dulwich.patch import write_tree_diff as write_tree_diff
 from dulwich.repo import Repo as Repo
-from typing import Any, Dict, Optional, Type
+from typing import Any, Dict, NoReturn, Optional, Type
 
-def signal_int(signal: Any, frame: Any) -> None: ...
+def signal_int(signal: Any, frame: Any) -> NoReturn: ...
 def signal_quit(signal: Any, frame: Any) -> None: ...
 
 class Command:
