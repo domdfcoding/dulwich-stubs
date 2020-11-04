@@ -33,9 +33,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-
 from typing import List
-
 
 def diffstat(lines: List[bytes], max_width: int = ...) -> bytes: ...
 def main() -> int: ...

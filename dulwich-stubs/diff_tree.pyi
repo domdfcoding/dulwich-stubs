@@ -18,7 +18,7 @@
 # License, Version 2.0.
 #
 
-from dulwich.objects import S_ISGITLINK as S_ISGITLINK, TreeEntry as TreeEntry
+from dulwich.objects import TreeEntry
 from typing import Any, Iterable, Iterator, NamedTuple, Optional, Tuple
 
 from dulwich.object_store import BaseObjectStore
@@ -35,39 +35,49 @@ MAX_FILES: int
 REWRITE_THRESHOLD: None
 
 class TreeChange(NamedTuple):
-    type: Any
-    old: Any
-    new: Any
-
-    @classmethod
-    def add(cls, new: Any) -> TreeChange: ...
-    @classmethod
-    def delete(cls, old: Any) -> TreeChange: ...
+	type: Any
+	old: Any
+	new: Any
+	@classmethod
+	def add(cls, new: Any) -> TreeChange: ...
+	@classmethod
+	def delete(cls, old: Any) -> TreeChange: ...
 
 def walk_trees(
-		store: BaseObjectStore,
-		tree1_id: Optional[Any],
-		tree2_id: Optional[Any],
-		prune_identical: bool = False,
-		) -> Iterator[Tuple[TreeEntry, TreeEntry]]: ...
-
+	store: BaseObjectStore,
+	tree1_id: Optional[Any],
+	tree2_id: Optional[Any],
+	prune_identical: bool = False,
+) -> Iterator[Tuple[TreeEntry, TreeEntry]]: ...
 def tree_changes(
-		store: BaseObjectStore,
-		tree1_id: Any,
-		tree2_id: Any,
-		want_unchanged: bool = False,
-		rename_detector: Optional[Any] = None,
-		include_trees: bool = False,
-		change_type_same: bool = False
-		) -> Iterator[TreeChange]: ...
-
+	store: BaseObjectStore,
+	tree1_id: Any,
+	tree2_id: Any,
+	want_unchanged: bool = False,
+	rename_detector: Optional[Any] = None,
+	include_trees: bool = False,
+	change_type_same: bool = False,
+) -> Iterator[TreeChange]: ...
 def tree_changes_for_merge(
-		store: BaseObjectStore,
-		parent_tree_ids: Iterable[Any],
-		tree_id: Any,
-		rename_detector: Optional[RenameDetector] = None,
-		) -> Iterator[TreeChange]: ...
+	store: BaseObjectStore,
+	parent_tree_ids: Iterable[Any],
+	tree_id: Any,
+	rename_detector: Optional[RenameDetector] = None,
+) -> Iterator[TreeChange]: ...
 
 class RenameDetector:
-    def __init__(self, store: Any, rename_threshold: Any = ..., max_files: Any = ..., rewrite_threshold: Any = ..., find_copies_harder: bool = ...) -> None: ...
-    def changes_with_renames(self, tree1_id: Any, tree2_id: Any, want_unchanged: bool = ..., include_trees: bool = ...): ...
+	def __init__(
+		self,
+		store: Any,
+		rename_threshold: Any = ...,
+		max_files: Any = ...,
+		rewrite_threshold: Any = ...,
+		find_copies_harder: bool = ...,
+	) -> None: ...
+	def changes_with_renames(
+		self,
+		tree1_id: Any,
+		tree2_id: Any,
+		want_unchanged: bool = ...,
+		include_trees: bool = ...,
+	): ...

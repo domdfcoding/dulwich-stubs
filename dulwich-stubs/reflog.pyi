@@ -19,11 +19,14 @@
 #
 
 from collections import namedtuple
-from dulwich.objects import ZERO_SHA as ZERO_SHA, format_timezone as format_timezone, parse_timezone as parse_timezone
 from typing import Any, IO, Iterator, Tuple
 
-Entry = namedtuple('Entry', ['old_sha', 'new_sha', 'committer', 'timestamp', 'timezone', 'message'])
+Entry = namedtuple(
+	"Entry", ["old_sha", "new_sha", "committer", "timestamp", "timezone", "message"]
+)
 
-def format_reflog_line(old_sha: Any, new_sha: Any, committer: Any, timestamp: Any, timezone: Any, message: Any) -> bytes: ...
+def format_reflog_line(
+	old_sha: Any, new_sha: Any, committer: Any, timestamp: Any, timezone: Any, message: Any
+) -> bytes: ...
 def parse_reflog_line(line: Any) -> Tuple[Any, Any, Any, Any, Any, Any]: ...
 def read_reflog(f: IO) -> Iterator[Entry]: ...

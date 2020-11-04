@@ -1,6 +1,15 @@
 from collections import MutableMapping, OrderedDict
-from dulwich.file import GitFile as GitFile
-from typing import Any, AnyStr, BinaryIO, Iterable, Iterator, List, Optional, Tuple, Union
+from typing import (
+	Any,
+	AnyStr,
+	BinaryIO,
+	Iterable,
+	Iterator,
+	List,
+	Optional,
+	Tuple,
+	Union,
+)
 
 SENTINAL: object
 
@@ -16,15 +25,32 @@ class CaseInsensitiveDict(OrderedDict):
 
 class Config:
 	def get(self, section: Tuple[Any, ...], name: Union[str, bytes]) -> Any: ...
-	def get_boolean(self, section: Tuple[Any, ...], name: Union[str, bytes], default: Optional[bool] = ...) -> bool: ...
-	def set(self, section: Tuple[Any, ...], name: Union[str, bytes], value: Any) -> None: ...
-	def iteritems(self, section: Tuple[Any, ...]) -> Iterator[Tuple[Union[str, bytes], Any]]: ...
+	def get_boolean(
+			self,
+			section: Tuple[Any, ...],
+			name: Union[str, bytes],
+			default: Optional[bool] = ...,
+		) -> bool: ...
+	def set(
+			self,
+			section: Tuple[Any, ...],
+			name: Union[str, bytes],
+			value: Any
+		) -> None: ...
+	def iteritems(
+			self,
+			section: Tuple[Any, ...],
+		) -> Iterator[Tuple[Union[str, bytes], Any]]: ...
 	def itersections(self) -> Iterator[Tuple]: ...
 	def has_section(self, name: Union[str, bytes]) -> bool: ...
 
 class ConfigDict(Config, MutableMapping):
 	encoding: str = ...
-	def __init__(self, values: Optional[Any] = ..., encoding: Optional[str] = ...) -> None: ...
+	def __init__(
+			self,
+			values: Optional[Any] = ...,
+			encoding: Optional[str] = ...,
+		) -> None: ...
 	def __eq__(self, other: Any) -> Any: ...
 	def __getitem__(self, key: Any): ...
 	def __setitem__(self, key: Any, value: Any): ...
@@ -38,7 +64,11 @@ class ConfigDict(Config, MutableMapping):
 
 class ConfigFile(ConfigDict):
 	path: Any = ...
-	def __init__(self, values: Optional[Any] = ..., encoding: Optional[str] = ...) -> None: ...
+	def __init__(
+			self,
+			values: Optional[Any] = ...,
+			encoding: Optional[str] = ...,
+		) -> None: ...
 	@classmethod
 	def from_file(cls: Any, f: BinaryIO) -> ConfigFile: ...
 	# 		with GitFile(path, 'rb') as f:
@@ -47,7 +77,7 @@ class ConfigFile(ConfigDict):
 	# 			return ret
 	@classmethod
 	def from_path(cls: Any, path: Any) -> ConfigFile: ...
-	def write_to_path(self, path: Any=...) -> None: ...
+	def write_to_path(self, path: Any = ...) -> None: ...
 	# 		if path is None:
 	# 			path = self.path
 	# 		with GitFile(path, 'wb') as f:

@@ -20,5 +20,4 @@
 
 import unittest
 
-
 def test_suite() -> unittest.suite.TestSuite: ...

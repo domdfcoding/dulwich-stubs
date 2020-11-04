@@ -18,7 +18,6 @@
 # License, Version 2.0.
 #
 
-from dulwich.file import GitFile as GitFile, ensure_dir_exists as ensure_dir_exists
 from typing import Any, AnyStr, Dict, IO, Optional, Set
 
 SYMREF: bytes
