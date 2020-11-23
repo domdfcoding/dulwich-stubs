@@ -2,11 +2,11 @@
 import pathlib
 import re
 
+# 3rd party
 import isort  # type: ignore
 from isort import Config
 
-isort_config = Config(settings_file=str(".isort.cfg"))
-
+isort_config = Config(settings_file=".isort.cfg")
 
 for filename in pathlib.Path("dulwich-stubs").rglob("*.pyi"):
 	# print(filename)
