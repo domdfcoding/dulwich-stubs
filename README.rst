@@ -17,8 +17,7 @@ dulwich-stubs
 
 	* - Tests
 	  - |travis| |actions_windows| |actions_macos| |codefactor| |pre_commit_ci|
-	* - PyPI
-	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - Other
@@ -96,13 +95,4 @@ Installation
 --------------
 
 .. start installation
-
-``dulwich-stubs`` can be installed from PyPI.
-
-To install with ``pip``:
-
-.. code-block:: bash
-
-	$ python -m pip install dulwich-stubs
-
 .. end installation

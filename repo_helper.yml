@@ -19,3 +19,4 @@ python_versions:
   - 3.8
 
 stubs_package: True
+on_pypi: false
