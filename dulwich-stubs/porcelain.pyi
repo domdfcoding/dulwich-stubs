@@ -22,7 +22,7 @@
 import os
 from collections import namedtuple
 from io import RawIOBase
-from typing import Any, Optional, Tuple, Union
+from typing import Any, Optional, overload, Tuple, TypeVar, Union
 
 # this package
 from dulwich.repo import BaseRepo, Repo
@@ -45,8 +45,18 @@ class Error(Exception):
 
 class RemoteExists(Error): ...
 
+_R = TypeVar("_R", bound=Repo)
+
 def open_repo(path_or_repo: Any) -> BaseRepo: ...
-def open_repo_closing(path_or_repo: Union[str, os.PathLike, Repo]) -> Repo: ...
+
+@overload
+def open_repo_closing(path_or_repo: _R) -> _R: ...
+
+@overload
+def open_repo_closing(path_or_repo: Union[str, os.PathLike]) -> Repo: ...
+
+def open_repo_closing(path_or_repo: Union[str, os.PathLike, _R]) -> _R: ...
+
 def path_to_tree_path(repopath: Any, path: Any, tree_encoding: Any = ...): ...
 
 class DivergedBranches(Error): ...
