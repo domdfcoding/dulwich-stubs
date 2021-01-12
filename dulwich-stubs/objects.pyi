@@ -20,7 +20,7 @@
 #
 
 # stdlib
-from typing import Any, AnyStr, Optional, Type, Union
+from typing import Any, AnyStr, NamedTuple, Optional, Type, Union
 
 # this package
 from dulwich.errors import FileFormatException
@@ -115,7 +115,10 @@ class Tag(ShaFile):
 	message: Any = ...
 	signature: Any = ...
 
-class TreeEntry:
+class TreeEntry(NamedTuple):
+	path: bytes
+	mode: Any
+	sha: bytes
 	def in_path(self, path: Any): ...
 
 def parse_tree(text: Any, strict: bool = ...) -> None: ...
