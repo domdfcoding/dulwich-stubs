@@ -21,7 +21,6 @@
 # stdlib
 from typing import Any, Optional
 
-
 class Hook:
 	def execute(self, *args: Any, **kwargs: Any): ...
 
@@ -32,15 +31,16 @@ class ShellHook(Hook):
 	pre_exec_callback: Any = ...
 	post_exec_callback: Any = ...
 	cwd: Any = ...
+
 	def __init__(
-		self,
-		name: Any,
-		path: Any,
-		numparam: Any,
-		pre_exec_callback: Optional[Any] = ...,
-		post_exec_callback: Optional[Any] = ...,
-		cwd: Optional[Any] = ...,
-	) -> None: ...
+			self,
+			name: Any,
+			path: Any,
+			numparam: Any,
+			pre_exec_callback: Optional[Any] = ...,
+			post_exec_callback: Optional[Any] = ...,
+			cwd: Optional[Any] = ...,
+			) -> None: ...
 
 class PreCommitShellHook(ShellHook):
 	def __init__(self, controldir: Any) -> None: ...
@@ -53,5 +53,6 @@ class CommitMsgShellHook(ShellHook):
 
 class PostReceiveShellHook(ShellHook):
 	controldir: Any = ...
+
 	def __init__(self, controldir: Any) -> None: ...
 	def execute(self, client_refs: Any): ...  # type: ignore

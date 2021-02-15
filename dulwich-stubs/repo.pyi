@@ -22,22 +22,10 @@
 # stdlib
 import os
 from io import BytesIO
-from typing import (
-		IO,
-		Any,
-		Callable,
-		Dict,
-		Iterable,
-		Iterator,
-		List,
-		NoReturn,
-		Optional,
-		Set,
-		Tuple,
-		Type,
-		TypeVar,
-		Union
-		)
+from typing import IO, Any, Callable, Dict, Iterable, Iterator, List, Optional, Set, Tuple, Type, TypeVar, Union
+
+# 3rd party
+from typing_extensions import NoReturn
 
 # this package
 from dulwich.config import ConfigFile, StackedConfig
@@ -64,6 +52,7 @@ DEFAULT_REF: bytes
 
 class InvalidUserIdentity(Exception):
 	identity: Any = ...
+
 	def __init__(self, identity: Any) -> None: ...
 
 def get_user_identity(config: StackedConfig, kind: Optional[str] = ...) -> bytes: ...
@@ -75,48 +64,53 @@ class ParentsProvider:
 	store: Any = ...
 	grafts: Dict = ...
 	shallows: Set = ...
-	def __init__(
-		self, store: Any, grafts: Dict = ..., shallows: Iterable = ...
-	) -> None: ...
+
+	def __init__(self, store: Any, grafts: Dict = ..., shallows: Iterable = ...) -> None: ...
 	def get_parents(self, commit_id: Any, commit: Optional[Any] = ...): ...
 
 class BaseRepo:
 	object_store: BaseObjectStore = ...
 	refs: RefsContainer = ...
 	hooks: Dict[str, Hook] = ...
+
 	def __init__(self, object_store: BaseObjectStore, refs: RefsContainer) -> None: ...
 	def get_named_file(self, path: Any) -> Optional[IO]: ...
 	def open_index(self) -> Index: ...
+
 	def fetch(
-		self,
-		target: Any,
-		determine_wants: Optional[Callable] = ...,
-		progress: Optional[Callable] = ...,
-		depth: Optional[int] = ...,
-	) -> Dict[bytes, bytes]: ...
+			self,
+			target: Any,
+			determine_wants: Optional[Callable] = ...,
+			progress: Optional[Callable] = ...,
+			depth: Optional[int] = ...,
+			) -> Dict[bytes, bytes]: ...
+
 	def fetch_pack_data(
-		self,
-		determine_wants: Callable,
-		graph_walker: Callable,
-		progress: Callable,
-		get_tagged: Optional[Callable] = ...,
-		depth: Optional[int] = ...,
-	) -> Tuple[int, Iterator[Tuple[Any, Any, Any, Any]]]: ...
+			self,
+			determine_wants: Callable,
+			graph_walker: Callable,
+			progress: Callable,
+			get_tagged: Optional[Callable] = ...,
+			depth: Optional[int] = ...,
+			) -> Tuple[int, Iterator[Tuple[Any, Any, Any, Any]]]: ...
+
 	def fetch_objects(
-		self,
-		determine_wants: Callable,
-		graph_walker: Callable,
-		progress: Callable,
-		get_tagged: Optional[Callable] = ...,
-		depth: Optional[int] = ...,
-	) -> ObjectStoreIterator: ...
+			self,
+			determine_wants: Callable,
+			graph_walker: Callable,
+			progress: Callable,
+			get_tagged: Optional[Callable] = ...,
+			depth: Optional[int] = ...,
+			) -> ObjectStoreIterator: ...
+
 	def generate_pack_data(
-		self,
-		have: List[Union[str, bytes]],
-		want: List[Union[str, bytes]],
-		progress: Optional[Callable] = ...,
-		ofs_delta: Optional[Any] = ...,
-	): ...
+			self,
+			have: List[Union[str, bytes]],
+			want: List[Union[str, bytes]],
+			progress: Optional[Callable] = ...,
+			ofs_delta: Optional[Any] = ...,
+			): ...
+
 	def get_graph_walker(self, heads: Optional[Any] = ...) -> ObjectStoreGraphWalker: ...
 	def get_refs(self) -> Dict[bytes, bytes]: ...
 	def head(self) -> bytes: ...
@@ -130,44 +124,48 @@ class BaseRepo:
 	def get_shallow(self) -> Set[Union[str, bytes]]: ...
 	def update_shallow(self, new_shallow: Any, new_unshallow: Any) -> None: ...
 	def get_peeled(self, ref: Any) -> Union[str, bytes]: ...
+
 	def get_walker(
-		self,
-		include: Optional[Iterable[Union[str, bytes]]] = ...,
-		exclude: Optional[Iterable[Union[str, bytes]]] = ...,
-		order: str = ...,
-		reverse: bool = ...,
-		max_entries: Optional[int] = ...,
-		paths: Optional[Iterable[Union[str, bytes]]] = ...,
-		rename_detector: Optional[RenameDetector] = ...,
-		follow: bool = ...,
-		since: Optional[float] = ...,
-		until: Optional[float] = ...,
-		get_parents: Callable[[Any], Any] = ...,
-		queue_cls: Type = ...,
-	) -> Walker: ...
+			self,
+			include: Optional[Iterable[Union[str, bytes]]] = ...,
+			exclude: Optional[Iterable[Union[str, bytes]]] = ...,
+			order: str = ...,
+			reverse: bool = ...,
+			max_entries: Optional[int] = ...,
+			paths: Optional[Iterable[Union[str, bytes]]] = ...,
+			rename_detector: Optional[RenameDetector] = ...,
+			follow: bool = ...,
+			since: Optional[float] = ...,
+			until: Optional[float] = ...,
+			get_parents: Callable[[Any], Any] = ...,
+			queue_cls: Type = ...,
+			) -> Walker: ...
+
 	def __getitem__(self, name: Any) -> ShaFile: ...
 	def __contains__(self, name: bytes) -> bool: ...
 	def __setitem__(self, name: bytes, value: Union[ShaFile, bytes]) -> Any: ...
 	def __delitem__(self, name: bytes) -> None: ...
+
 	def do_commit(
-		self,
-		message: Optional[Union[str, bytes]] = ...,
-		committer: Optional[Union[str, bytes]] = ...,
-		author: Optional[Union[str, bytes]] = ...,
-		commit_timestamp: Optional[float] = ...,
-		commit_timezone: Optional[float] = ...,
-		author_timestamp: Optional[float] = ...,
-		author_timezone: Optional[float] = ...,
-		tree: Optional[Any] = ...,
-		encoding: Optional[Union[str, bytes]] = ...,
-		ref: bytes = ...,
-		merge_heads: Optional[Any] = ...,
-	) -> bytes: ...
+			self,
+			message: Optional[Union[str, bytes]] = ...,
+			committer: Optional[Union[str, bytes]] = ...,
+			author: Optional[Union[str, bytes]] = ...,
+			commit_timestamp: Optional[float] = ...,
+			commit_timezone: Optional[float] = ...,
+			author_timestamp: Optional[float] = ...,
+			author_timezone: Optional[float] = ...,
+			tree: Optional[Any] = ...,
+			encoding: Optional[Union[str, bytes]] = ...,
+			ref: bytes = ...,
+			merge_heads: Optional[Any] = ...,
+			) -> bytes: ...
 
 def read_gitfile(f: IO) -> str: ...
 
 class UnsupportedVersion(Exception):
 	version: Any = ...
+
 	def __init__(self, version: Any) -> None: ...
 
 _R = TypeVar("_R", bound="Repo")
@@ -175,35 +173,42 @@ _R = TypeVar("_R", bound="Repo")
 class Repo(BaseRepo):
 	bare: bool = ...
 	path: Any = ...
+
 	def __init__(self, root: Union[str, os.PathLike]) -> None: ...
+
 	@classmethod
 	def discover(cls, start: str = ...): ...
+
 	def controldir(self): ...
 	def commondir(self): ...
-	def get_named_file(
-		self, path: Union[str, bytes], basedir: Optional[Union[str, bytes]] = ...
-	) -> Optional[IO]: ...
+	def get_named_file(self, path: Union[str, bytes], basedir: Optional[Union[str, bytes]] = ...) -> Optional[IO]: ...
 	def index_path(self) -> str: ...
 	def open_index(self) -> Index: ...
 	def has_index(self) -> bool: ...
 	def stage(self, fs_paths: Union[List[str], str]) -> None: ...
+
 	def clone(
-		self,
-		target_path: Union[str, bytes],
-		mkdir: bool = ...,
-		bare: bool = ...,
-		origin: bytes = ...,
-		checkout: Optional[Any] = ...,
-	) -> _R: ...
+			self,
+			target_path: Union[str, bytes],
+			mkdir: bool = ...,
+			bare: bool = ...,
+			origin: bytes = ...,
+			checkout: Optional[Any] = ...,
+			) -> _R: ...
+
 	def reset_index(self, tree: Optional[Any] = ...): ...
 	def get_config(self) -> ConfigFile: ...
 	def get_description(self) -> Optional[Union[str, bytes]]: ...
 	def set_description(self, description: Any) -> None: ...
+
 	@classmethod
 	def init(cls: Type[_R], path: Any, mkdir: bool = ...) -> _R: ...
+
 	@classmethod
 	def init_bare(cls: Type[_R], path: Any, mkdir: bool = ...) -> _R: ...
+
 	create: Any = ...
+
 	def close(self) -> None: ...
 	def __enter__(self) -> _R: ...
 	def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any) -> None: ...
@@ -213,13 +218,13 @@ _M = TypeVar("_M", bound="MemoryRepo")
 
 class MemoryRepo(BaseRepo):
 	bare: bool = ...
+
 	def __init__(self) -> None: ...
 	def set_description(self, description: Any) -> None: ...
 	def get_description(self): ...
-	def get_named_file(
-		self, path: Any, basedir: Optional[Any] = ...
-	) -> Optional[BytesIO]: ...
+	def get_named_file(self, path: Any, basedir: Optional[Any] = ...) -> Optional[BytesIO]: ...
 	def open_index(self) -> NoReturn: ...
 	def get_config(self) -> ConfigFile: ...
+
 	@classmethod
 	def init_bare(cls, objects: Any, refs: Any) -> "_M": ...

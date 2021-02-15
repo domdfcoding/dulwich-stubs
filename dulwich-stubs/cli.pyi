@@ -1,6 +1,8 @@
 # stdlib
-from typing import Any, Dict, NoReturn, Optional, Type
+from typing import Any, Dict, Optional, Type
 
+# 3rd party
+from typing_extensions import NoReturn
 
 def signal_int(signal: Any, frame: Any) -> NoReturn: ...
 def signal_quit(signal: Any, frame: Any) -> None: ...
@@ -112,12 +114,14 @@ class cmd_remote_add(Command):
 
 class SuperCommand(Command):
 	subcommands: Dict[str, Type[Command]] = ...
+
 	def run(self, args: Any): ...
 
 class cmd_remote(SuperCommand):
 	subcommands: Any = ...
 
 class cmd_check_ignore(Command):
+
 	def run(self, args: Any): ...
 
 class cmd_check_mailmap(Command):
@@ -136,6 +140,7 @@ class cmd_stash(SuperCommand):
 	subcommands: Any = ...
 
 class cmd_ls_files(Command):
+
 	def run(self, args: Any) -> None: ...
 
 class cmd_describe(Command):
