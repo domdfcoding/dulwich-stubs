@@ -13,5 +13,5 @@ def tar_stream(
 		tree: Any,
 		mtime: Any,
 		prefix: bytes = ...,
-		format: str = ...,  # noqa: A002
+		format: str = ...,  # noqa: A002  # pylint: disable=redefined-builtin
 		) -> Iterator[bytes]: ...

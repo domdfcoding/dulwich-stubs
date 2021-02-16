@@ -27,12 +27,12 @@ class Config:
 			default: Optional[bool] = ...,
 			) -> bool: ...
 
-	def set(  # noqa: A003
-			self,
-			section: Tuple[Any, ...],
-			name: Union[str, bytes],
-			value: Any,
-			) -> None: ...
+	def set(  # noqa: A003  # pylint: disable=redefined-builtin
+		self,
+		section: Tuple[Any, ...],
+		name: Union[str, bytes],
+		value: Any,
+		) -> None: ...
 
 	def iteritems(
 			self,
@@ -59,12 +59,12 @@ class ConfigDict(Config, MutableMapping):
 	def __len__(self): ...
 	def get(self, section: Any, name: Any): ...  # type: ignore
 
-	def set(  # noqa: A003
-			self,
-			section: Any,
-			name: Any,
-			value: Any,
-			) -> None: ...
+	def set(  # noqa: A003  # pylint: disable=redefined-builtin
+		self,
+		section: Any,
+		name: Any,
+		value: Any,
+		) -> None: ...
 
 	def iteritems(self, section: Any): ...
 	def itersections(self): ...
@@ -119,7 +119,7 @@ class StackedConfig(Config):
 
 	def get(self, section: Any, name: Any): ...
 
-	def set(  # noqa: A003
+	def set(  # noqa: A003  # pylint: disable=redefined-builtin
 			self,
 			section: Any,
 			name: Any,

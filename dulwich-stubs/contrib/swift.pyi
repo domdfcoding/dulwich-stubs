@@ -13,7 +13,7 @@ class PackInfoObjectStoreIterator(GreenThreadsObjectStoreIterator):
 	def __len__(self): ...
 
 class PackInfoMissingObjectFinder(GreenThreadsMissingObjectFinder):
-	def next(self): ...  # noqa: A003
+	def next(self): ...  # noqa: A003  # pylint: disable=redefined-builtin
 
 def load_conf(path: Optional[Any] = ..., file: Optional[Any] = ...): ...
 def swift_load_pack_index(scon: Any, filename: Any): ...
@@ -56,7 +56,7 @@ class SwiftConnector:
 	def get_object(
 			self,
 			name: Any,
-			range: Optional[Any] = ...,  # noqa: A002
+			range: Optional[Any] = ...,  # noqa: A002  # pylint: disable=redefined-builtin
 			): ...
 
 	def del_object(self, name: Any) -> None: ...

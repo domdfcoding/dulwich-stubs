@@ -51,7 +51,7 @@ class _LengthLimitedFile:
 
 	def __init__(
 			self,
-			input: Any,  # noqa: A002
+			input: Any,  # noqa: A002  # pylint: disable=redefined-builtin
 			max_bytes: Any,
 			) -> None: ...
 
@@ -139,8 +139,8 @@ class ServerHandlerLogger(ServerHandler):
 
 	def log_message(
 			self,
-			format: Any,  # noqa: A002
-			*args: Any,  # noqa: A002
+			format: Any,  # noqa: A002  # pylint: disable=redefined-builtin
+			*args: Any,  # noqa: A002  # pylint: disable=redefined-builtin
 			) -> None: ...
 
 	def log_error(self, *args: Any) -> None: ...
@@ -150,7 +150,7 @@ class WSGIRequestHandlerLogger(WSGIRequestHandler):
 
 	def log_message(
 			self,
-			format: Any,  # noqa: A002
+			format: Any,  # noqa: A002  # pylint: disable=redefined-builtin
 			*args: Any,
 			) -> None: ...
 

@@ -37,7 +37,7 @@ MAX_FILES: int
 REWRITE_THRESHOLD: None
 
 class TreeChange(NamedTuple):
-	type: Any  # noqa: A003
+	type: Any  # noqa: A003  # pylint: disable=redefined-builtin
 	old: Any
 	new: Any
 

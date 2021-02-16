@@ -28,7 +28,7 @@ class Mailmap:
 
 	def __init__(
 			self,
-			map: Optional[Any] = ...,  # noqa: A002
+			map: Optional[Any] = ...,  # noqa: A002  # pylint: disable=redefined-builtin
 			) -> None: ...
 
 	def add_entry(self, canonical_identity: Any, from_identity: Optional[Any] = ...) -> None: ...

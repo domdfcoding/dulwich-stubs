@@ -12,7 +12,7 @@ class InvalidWants(Exception):
 class HTTPUnauthorized(Exception):
 	www_authenticate: Any = ...
 
-	def __init__(self, www_authenticate: Any) -> None: ...
+	def __init__(self, www_authenticate: Any, url: Any) -> None: ...
 
 COMMON_CAPABILITIES: List[bytes]
 UPLOAD_CAPABILITIES: List[bytes]
@@ -139,7 +139,7 @@ class TraditionalGitClient(GitClient):
 			write_data: Any,
 			progress: Optional[Any] = ...,
 			write_error: Optional[Any] = ...,
-			format: Optional[Any] = ...,  # noqa: A002
+			format: Optional[Any] = ...,  # noqa: A002  # pylint: disable=redefined-builtin
 			subdirs: Optional[Any] = ...,
 			prefix: Optional[Any] = ...
 			) -> None: ...

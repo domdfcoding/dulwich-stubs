@@ -39,7 +39,7 @@ class WalkEntry:
 
 class _CommitTimeQueue:
 	def __init__(self, walker: Any) -> None: ...
-	def next(self) -> None: ...  # noqa: A003
+	def next(self) -> None: ...  # noqa: A003  # pylint: disable=redefined-builtin
 	def __next__(self) -> None: ...
 
 class Walker:

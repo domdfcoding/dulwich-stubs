@@ -191,7 +191,7 @@ class MissingObjectFinder:
 			): ...
 
 	def add_todo(self, entries: Any) -> None: ...
-	def next(self): ...  # noqa: A003
+	def next(self): ...  # noqa: A003  # pylint: disable=redefined-builtin
 
 	__next__: Any = ...
 
@@ -203,7 +203,7 @@ class ObjectStoreGraphWalker:
 
 	def __init__(self, local_heads: Any, get_parents: Any, shallow: Optional[Any] = ...) -> None: ...
 	def ack(self, sha: Any) -> None: ...
-	def next(self): ...  # noqa: A003
+	def next(self): ...  # noqa: A003  # pylint: disable=redefined-builtin
 
 	__next__: Any = ...
 
@@ -217,7 +217,7 @@ class OverlayObjectStore(BaseObjectStore):
 
 	def add_object(
 			self,
-			object: Any,  # noqa: A002
+			object: Any,  # noqa: A002  # pylint: disable=redefined-builtin
 			): ...
 
 	def add_objects(self, objects: Any, progress: Optional[Any] = ...): ...
