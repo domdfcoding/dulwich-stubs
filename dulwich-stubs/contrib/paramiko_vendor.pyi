@@ -21,13 +21,15 @@
 # stdlib
 from typing import Any, Optional
 
-
 class _ParamikoWrapper:
 	client: Any = ...
 	channel: Any = ...
+
 	def __init__(self, client: Any, channel: Any) -> None: ...
+
 	@property
 	def stderr(self) -> Any: ...
+
 	def can_read(self) -> Any: ...
 	def write(self, data: Any) -> Any: ...
 	def read(self, n: Optional[int] = ...) -> bytes: ...
@@ -35,15 +37,17 @@ class _ParamikoWrapper:
 
 class ParamikoSSHVendor:
 	kwargs: Any = ...
+
 	def __init__(self, **kwargs: Any) -> None: ...
+
 	def run_command(
-		self,
-		host: Any,
-		command: Any,
-		username: Optional[Any] = ...,
-		port: Optional[Any] = ...,
-		password: Optional[Any] = ...,
-		pkey: Optional[Any] = ...,
-		key_filename: Optional[Any] = ...,
-		**kwargs: Any
-	) -> _ParamikoWrapper: ...
+			self,
+			host: Any,
+			command: Any,
+			username: Optional[Any] = ...,
+			port: Optional[Any] = ...,
+			password: Optional[Any] = ...,
+			pkey: Optional[Any] = ...,
+			key_filename: Optional[Any] = ...,
+			**kwargs: Any
+			) -> _ParamikoWrapper: ...

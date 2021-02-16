@@ -32,15 +32,14 @@ ALL_ORDERS: Tuple[str, str]
 
 class WalkEntry:
 	commit: Commit = ...
+
 	def __init__(self, walker: Any, commit: Commit) -> None: ...
-	def changes(
-		self, path_prefix: Optional[str] = ...
-	) -> Union[List[TreeChange], List[List[TreeChange]]]: ...
+	def changes(self, path_prefix: Optional[str] = ...) -> Union[List[TreeChange], List[List[TreeChange]]]: ...
 	def __repr__(self) -> str: ...
 
 class _CommitTimeQueue:
 	def __init__(self, walker: Any) -> None: ...
-	def next(self) -> None: ...
+	def next(self) -> None: ...  # noqa: A003  # pylint: disable=redefined-builtin
 	def __next__(self) -> None: ...
 
 class Walker:
@@ -56,20 +55,22 @@ class Walker:
 	follow: bool = ...
 	since: float = ...
 	until: float = ...
+
 	def __init__(
-		self,
-		store: BaseObjectStore,
-		include: Iterable[Union[str, bytes]],
-		exclude: Optional[Iterable[Union[str, bytes]]] = ...,
-		order: str = ...,
-		reverse: bool = ...,
-		max_entries: Optional[int] = ...,
-		paths: Optional[Iterable[Union[str, bytes]]] = ...,
-		rename_detector: Optional[RenameDetector] = ...,
-		follow: bool = ...,
-		since: Optional[float] = ...,
-		until: Optional[float] = ...,
-		get_parents: Callable[[Any], Any] = ...,
-		queue_cls: Type = ...,
-	): ...
+			self,
+			store: BaseObjectStore,
+			include: Iterable[Union[str, bytes]],
+			exclude: Optional[Iterable[Union[str, bytes]]] = ...,
+			order: str = ...,
+			reverse: bool = ...,
+			max_entries: Optional[int] = ...,
+			paths: Optional[Iterable[Union[str, bytes]]] = ...,
+			rename_detector: Optional[RenameDetector] = ...,
+			follow: bool = ...,
+			since: Optional[float] = ...,
+			until: Optional[float] = ...,
+			get_parents: Callable[[Any], Any] = ...,
+			queue_cls: Type = ...,
+			): ...
+
 	def __iter__(self) -> Iterator[WalkEntry]: ...

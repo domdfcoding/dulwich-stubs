@@ -24,8 +24,9 @@ PROJDIR: str
 PATTERN: str
 
 def get_recent_tags(projdir: Any = ...): ...
+
 def get_current_version(
 		projdir: Any = ...,
 		pattern: Any = ...,
 		logger: Optional[Any] = ...,
-): ...
+		): ...

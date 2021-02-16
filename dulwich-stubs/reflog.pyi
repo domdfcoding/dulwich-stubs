@@ -22,12 +22,16 @@
 from collections import namedtuple
 from typing import IO, Any, Iterator, Tuple
 
-Entry = namedtuple(
-	"Entry", ["old_sha", "new_sha", "committer", "timestamp", "timezone", "message"]
-)
+Entry = namedtuple("Entry", ["old_sha", "new_sha", "committer", "timestamp", "timezone", "message"])
 
 def format_reflog_line(
-	old_sha: Any, new_sha: Any, committer: Any, timestamp: Any, timezone: Any, message: Any
-) -> bytes: ...
+		old_sha: Any,
+		new_sha: Any,
+		committer: Any,
+		timestamp: Any,
+		timezone: Any,
+		message: Any,
+		) -> bytes: ...
+
 def parse_reflog_line(line: Any) -> Tuple[Any, Any, Any, Any, Any, Any]: ...
 def read_reflog(f: IO) -> Iterator[Entry]: ...

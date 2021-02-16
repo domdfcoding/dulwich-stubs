@@ -20,3 +20,8 @@ python_versions:
 
 stubs_package: True
 on_pypi: false
+
+mypy_deps:
+  - gevent
+  - geventhttpclient
+  - paramiko

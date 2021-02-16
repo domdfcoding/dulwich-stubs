@@ -1,10 +1,10 @@
 # stdlib
 from typing import Any, Iterator, Optional
 
-
 class ChunkedBytesIO:
 	contents: Any = ...
 	pos: Any = ...
+
 	def __init__(self, contents: Any) -> None: ...
 	def read(self, maxbytes: Optional[Any] = ...) -> bytes: ...
 
@@ -13,5 +13,5 @@ def tar_stream(
 		tree: Any,
 		mtime: Any,
 		prefix: bytes = ...,
-		format: str = ...,
-) -> Iterator[bytes]: ...
+		format: str = ...,  # noqa: A002  # pylint: disable=redefined-builtin
+		) -> Iterator[bytes]: ...

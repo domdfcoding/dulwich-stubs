@@ -32,27 +32,31 @@ def check_ref_format(refname: bytes) -> bool: ...
 
 class RefsContainer:
 	def __init__(self, logger: Optional[Any] = ...) -> None: ...
+
 	def set_symbolic_ref(
-		self,
-		name: Any,
-		other: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> None: ...
+			self,
+			name: Any,
+			other: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> None: ...
+
 	def get_packed_refs(self) -> Dict: ...
 	def get_peeled(self, name: Any): ...
+
 	def import_refs(
-		self,
-		base: Any,
-		other: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-		prune: bool = ...,
-	) -> None: ...
+			self,
+			base: Any,
+			other: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			prune: bool = ...,
+			) -> None: ...
+
 	def allkeys(self) -> None: ...
 	def __iter__(self) -> Any: ...
 	def keys(self, base: Optional[Any] = ...): ...
@@ -63,34 +67,40 @@ class RefsContainer:
 	def follow(self, name: Any): ...
 	def __contains__(self, refname: Any): ...
 	def __getitem__(self, name: Any): ...
+
 	def set_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		new_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> bool: ...
+			self,
+			name: Any,
+			old_ref: Any,
+			new_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> bool: ...
+
 	def add_if_new(self, name: Any, ref: Any): ...
 	def __setitem__(self, name: Any, ref: Any) -> None: ...
+
 	def remove_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> bool: ...
+			self,
+			name: Any,
+			old_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> bool: ...
+
 	def __delitem__(self, name: Any) -> None: ...
 	def get_symrefs(self): ...
 	def watch(self) -> None: ...
 
 class _DictRefsWatcher:
 	def __init__(self, refs: Any) -> None: ...
+
 	queue: Any = ...
+
 	def __enter__(self): ...
 	def __next__(self): ...
 	def __exit__(self, exc_type: Any, exc_val: Any, exc_tb: Any): ...
@@ -101,43 +111,48 @@ class DictRefsContainer(RefsContainer):
 	def read_loose_ref(self, name: Any) -> Optional[Any]: ...
 	def get_packed_refs(self): ...
 	def watch(self): ...
+
 	def set_symbolic_ref(
-		self,
-		name: Any,
-		other: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> None: ...
+			self,
+			name: Any,
+			other: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> None: ...
+
 	def set_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		new_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> bool: ...
+			self,
+			name: Any,
+			old_ref: Any,
+			new_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> bool: ...
+
 	def add_if_new(
-		self,
-		name: Any,
-		ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> bool: ...
+			self,
+			name: Any,
+			ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> bool: ...
+
 	def remove_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	): ...
+			self,
+			name: Any,
+			old_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			): ...
+
 	def get_peeled(self, name: Any): ...
 
 class InfoRefsContainer(RefsContainer):
@@ -152,6 +167,7 @@ class _InotifyRefsWatcher:
 	manager: Any = ...
 	notifier: Any = ...
 	queue: Any = ...
+
 	def __init__(self, path: Any) -> None: ...
 	def __next__(self): ...
 	def __enter__(self): ...
@@ -160,64 +176,61 @@ class _InotifyRefsWatcher:
 class DiskRefsContainer(RefsContainer):
 	path: Any = ...
 	worktree_path: Any = ...
-	def __init__(
-			self,
-			path: Any,
-			worktree_path: Optional[Any] = ...,
-			logger: Optional[Any] = ...
-	) -> None: ...
+
+	def __init__(self, path: Any, worktree_path: Optional[Any] = ..., logger: Optional[Any] = ...) -> None: ...
 	def subkeys(self, base: Any): ...
 	def allkeys(self): ...
 	def refpath(self, name: Any): ...
 	def get_packed_refs(self): ...
 	def get_peeled(self, name: Any): ...
 	def read_loose_ref(self, name: Any): ...
+
 	def set_symbolic_ref(
-		self,
-		name: Any,
-		other: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	) -> None: ...
+			self,
+			name: Any,
+			other: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			) -> None: ...
+
 	def set_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		new_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	): ...
+			self,
+			name: Any,
+			old_ref: Any,
+			new_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			): ...
+
 	def add_if_new(
-		self,
-		name: Any,
-		ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	): ...
+			self,
+			name: Any,
+			ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			): ...
+
 	def remove_if_equals(
-		self,
-		name: Any,
-		old_ref: Any,
-		committer: Optional[Any] = ...,
-		timestamp: Optional[Any] = ...,
-		timezone: Optional[Any] = ...,
-		message: Optional[Any] = ...,
-	): ...
+			self,
+			name: Any,
+			old_ref: Any,
+			committer: Optional[Any] = ...,
+			timestamp: Optional[Any] = ...,
+			timezone: Optional[Any] = ...,
+			message: Optional[Any] = ...,
+			): ...
+
 	def watch(self): ...
 
 def read_packed_refs(f: IO[bytes]) -> None: ...
 def read_packed_refs_with_peeled(f: IO[bytes]) -> None: ...
-def write_packed_refs(
-		f: IO[bytes],
-		packed_refs: Any,
-		peeled_refs: Optional[Any] = ...
-) -> None: ...
+def write_packed_refs(f: IO[bytes], packed_refs: Any, peeled_refs: Optional[Any] = ...) -> None: ...
 def read_info_refs(f: Any): ...
 def write_info_refs(refs: Any, store: Any) -> None: ...
 def is_local_branch(x: Any): ...

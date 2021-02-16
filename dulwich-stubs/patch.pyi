@@ -28,36 +28,35 @@ from dulwich.objects import Commit
 FIRST_FEW_BYTES: int
 
 def write_commit_patch(
-	f: Any,
-	commit: Commit,
-	contents: Any,
-	progress: Tuple,
-	version: Optional[Any] = ...,
-	encoding: Optional[Any] = ...,
-) -> None: ...
+		f: Any,
+		commit: Commit,
+		contents: Any,
+		progress: Tuple,
+		version: Optional[Any] = ...,
+		encoding: Optional[Any] = ...,
+		) -> None: ...
+
 def get_summary(commit: Commit) -> str: ...
+
 def unified_diff(
-	a: Any,
-	b: Any,
-	fromfile: str = ...,
-	tofile: str = ...,
-	fromfiledate: str = ...,
-	tofiledate: str = ...,
-	n: int = ...,
-	lineterm: str = ...,
-	tree_encoding: str = ...,
-	output_encoding: str = ...,
-) -> None: ...
+		a: Any,
+		b: Any,
+		fromfile: str = ...,
+		tofile: str = ...,
+		fromfiledate: str = ...,
+		tofiledate: str = ...,
+		n: int = ...,
+		lineterm: str = ...,
+		tree_encoding: str = ...,
+		output_encoding: str = ...,
+		) -> None: ...
+
 def is_binary(content: Any) -> bytes: ...
 def shortid(hexsha: Any) -> bytes: ...
 def patch_filename(p: Any, root: Any) -> bytes: ...
-def write_object_diff(
-	f: IO, store: Any, old_file: Any, new_file: Any, diff_binary: bool = ...
-): ...
+def write_object_diff(f: IO, store: Any, old_file: Any, new_file: Any, diff_binary: bool = ...): ...
 def gen_diff_header(paths: Any, modes: Any, shas: Any) -> None: ...
 def write_blob_diff(f: IO, old_file: Any, new_file: Any): ...
-def write_tree_diff(
-	f: IO, store: Any, old_tree: Any, new_tree: Any, diff_binary: bool = ...
-) -> None: ...
+def write_tree_diff(f: IO, store: Any, old_tree: Any, new_tree: Any, diff_binary: bool = ...) -> None: ...
 def git_am_patch_split(f: IO, encoding: Optional[Any] = ...): ...
 def parse_patch_message(msg: Message, encoding: Optional[str] = ...): ...
