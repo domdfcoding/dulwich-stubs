@@ -20,7 +20,7 @@ dulwich-stubs
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained|
 	* - QA
-	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+	  - |codefactor| |actions_flake8| |actions_mypy|
 	* - Other
 	  - |license| |language| |requires|
 
@@ -44,8 +44,8 @@ dulwich-stubs
 	:target: https://github.com/domdfcoding/dulwich-stubs/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/dulwich-stubs/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/dulwich-stubs/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/domdfcoding/dulwich-stubs/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/domdfcoding/dulwich-stubs/
 	:alt: Requirements Status
 
 .. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/dulwich-stubs?logo=codefactor
@@ -67,12 +67,8 @@ dulwich-stubs
 	:target: https://github.com/domdfcoding/dulwich-stubs/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2023
 	:alt: Maintenance
-
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/dulwich-stubs/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/dulwich-stubs/master
-	:alt: pre-commit.ci status
 
 .. end shields
 
