@@ -42,4 +42,4 @@ known_third_party = [
     "pytest_timeout",
     "requests",
 ]
-known_first_party = "dulwich"
+known_first_party = [ "dulwich",]
