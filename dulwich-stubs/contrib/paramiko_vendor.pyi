@@ -49,5 +49,5 @@ class ParamikoSSHVendor:
 			password: Optional[Any] = ...,
 			pkey: Optional[Any] = ...,
 			key_filename: Optional[Any] = ...,
-			**kwargs: Any
+			**kwargs: Any,
 			) -> _ParamikoWrapper: ...

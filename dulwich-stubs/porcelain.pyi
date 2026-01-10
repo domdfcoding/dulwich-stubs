@@ -93,7 +93,7 @@ def clone(
 		outstream: Optional[Any] = ...,
 		origin: bytes = ...,
 		depth: Optional[Any] = ...,
-		**kwargs: Any
+		**kwargs: Any,
 		): ...
 
 def add(repo: str = ..., paths: Optional[Any] = ...): ...
@@ -158,7 +158,7 @@ def push(
 		outstream: Any = ...,
 		errstream: Any = ...,
 		force: bool = ...,
-		**kwargs: Any
+		**kwargs: Any,
 		): ...
 
 def pull(
@@ -169,7 +169,7 @@ def pull(
 		errstream: Any = ...,
 		fast_forward: bool = ...,
 		force: bool = ...,
-		**kwargs: Any
+		**kwargs: Any,
 		): ...
 
 def status(repo: Union[str, Repo] = ..., ignored: bool = ...): ...
@@ -195,7 +195,7 @@ def fetch(
 		prune: bool = ...,
 		prune_tags: bool = ...,
 		force: bool = ...,
-		**kwargs: Any
+		**kwargs: Any,
 		): ...
 
 def ls_remote(remote: Any, config: Optional[Any] = ..., **kwargs: Any): ...

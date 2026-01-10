@@ -32,7 +32,8 @@ class Config:
 		section: Tuple[Any, ...],
 		name: Union[str, bytes],
 		value: Any,
-		) -> None: ...
+
+	) -> None: ...
 
 	def iteritems(
 			self,
@@ -64,7 +65,8 @@ class ConfigDict(Config, MutableMapping):
 		section: Any,
 		name: Any,
 		value: Any,
-		) -> None: ...
+
+	) -> None: ...
 
 	def iteritems(self, section: Any): ...
 	def itersections(self): ...

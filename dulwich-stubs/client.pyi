@@ -38,7 +38,7 @@ class FetchPackResult:
 			symrefs: Any,
 			agent: Any,
 			new_shallow: Optional[Any] = ...,
-			new_unshallow: Optional[Any] = ...
+			new_unshallow: Optional[Any] = ...,
 			) -> None: ...
 
 	def __eq__(self, other: Any) -> Any: ...
@@ -68,7 +68,7 @@ class GitClient:
 			thin_packs: bool = ...,
 			report_activity: Optional[Any] = ...,
 			quiet: bool = ...,
-			include_tags: bool = ...
+			include_tags: bool = ...,
 			) -> None: ...
 
 	def get_url(self, path: Any) -> str: ...
@@ -81,7 +81,7 @@ class GitClient:
 			path: Any,
 			update_refs: Any,
 			generate_pack_data: Any,
-			progress: Optional[Any] = ...
+			progress: Optional[Any] = ...,
 			) -> SendPackResult: ...
 
 	def fetch(
@@ -90,7 +90,7 @@ class GitClient:
 			target: Any,
 			determine_wants: Optional[Any] = ...,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			): ...
 
 	def fetch_pack(
@@ -100,7 +100,7 @@ class GitClient:
 			graph_walker: Any,
 			pack_data: Any,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			) -> FetchPackResult: ...
 
 	def get_refs(self, path: bytes) -> None: ...
@@ -117,7 +117,7 @@ class TraditionalGitClient(GitClient):
 			path: Any,
 			update_refs: Any,
 			generate_pack_data: Any,
-			progress: Optional[Any] = ...
+			progress: Optional[Any] = ...,
 			) -> SendPackResult: ...
 
 	def fetch_pack(
@@ -127,7 +127,7 @@ class TraditionalGitClient(GitClient):
 			graph_walker: Any,
 			pack_data: Any,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			) -> FetchPackResult: ...
 
 	def get_refs(self, path: Any): ...
@@ -141,7 +141,7 @@ class TraditionalGitClient(GitClient):
 			write_error: Optional[Any] = ...,
 			format: Optional[Any] = ...,  # noqa: A002  # pylint: disable=redefined-builtin
 			subdirs: Optional[Any] = ...,
-			prefix: Optional[Any] = ...
+			prefix: Optional[Any] = ...,
 			) -> None: ...
 
 class TCPGitClient(TraditionalGitClient):
@@ -180,7 +180,7 @@ class LocalGitClient(GitClient):
 			self,
 			thin_packs: bool = ...,
 			report_activity: Optional[Any] = ...,
-			config: Optional[Any] = ...
+			config: Optional[Any] = ...,
 			) -> None: ...
 
 	def get_url(self, path: Any): ...
@@ -193,7 +193,7 @@ class LocalGitClient(GitClient):
 			path: Any,
 			update_refs: Any,
 			generate_pack_data: Any,
-			progress: Optional[Any] = ...
+			progress: Optional[Any] = ...,
 			) -> SendPackResult: ...
 
 	def fetch(
@@ -202,7 +202,7 @@ class LocalGitClient(GitClient):
 			target: Any,
 			determine_wants: Optional[Any] = ...,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			): ...
 
 	def fetch_pack(
@@ -212,7 +212,7 @@ class LocalGitClient(GitClient):
 			graph_walker: Any,
 			pack_data: Any,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			) -> FetchPackResult: ...
 
 	def get_refs(self, path: Any): ...
@@ -228,7 +228,7 @@ class SSHVendor:
 			username: Optional[Any] = ...,
 			port: Optional[Any] = ...,
 			password: Optional[Any] = ...,
-			key_filename: Optional[Any] = ...
+			key_filename: Optional[Any] = ...,
 			): ...
 
 	def run_command(
@@ -238,7 +238,7 @@ class SSHVendor:
 			username: Optional[Any] = ...,
 			port: Optional[Any] = ...,
 			password: Optional[Any] = ...,
-			key_filename: Optional[Any] = ...
+			key_filename: Optional[Any] = ...,
 			) -> None: ...
 
 class StrangeHostname(Exception):
@@ -253,7 +253,7 @@ class SubprocessSSHVendor(SSHVendor):
 			username: Optional[Any] = ...,
 			port: Optional[Any] = ...,
 			password: Optional[Any] = ...,
-			key_filename: Optional[Any] = ...
+			key_filename: Optional[Any] = ...,
 			): ...
 
 class PLinkSSHVendor(SSHVendor):
@@ -265,7 +265,7 @@ class PLinkSSHVendor(SSHVendor):
 			username: Optional[Any] = ...,
 			port: Optional[Any] = ...,
 			password: Optional[Any] = ...,
-			key_filename: Optional[Any] = ...
+			key_filename: Optional[Any] = ...,
 			): ...
 
 def ParamikoSSHVendor(**kwargs: Any) -> dulwich.contrib.paramiko_vendor.ParamikoSSHVendor: ...
@@ -290,7 +290,7 @@ class SSHGitClient(TraditionalGitClient):
 			config: Optional[Any] = ...,
 			password: Optional[Any] = ...,
 			key_filename: Optional[Any] = ...,
-			**kwargs: Any
+			**kwargs: Any,
 			) -> None: ...
 
 	def get_url(self, path: Any): ...
@@ -304,7 +304,7 @@ def default_urllib3_manager(
 		config: ConfigDict,
 		pool_manager_cls: Optional[Any] = ...,
 		proxy_manager_cls: Optional[Any] = ...,
-		**override_kwargs: Any
+		**override_kwargs: Any,
 		): ...
 
 class HttpGitClient(GitClient):
@@ -319,7 +319,7 @@ class HttpGitClient(GitClient):
 			config: Optional[Any] = ...,
 			username: Optional[Any] = ...,
 			password: Optional[Any] = ...,
-			**kwargs: Any
+			**kwargs: Any,
 			) -> None: ...
 
 	def get_url(self, path: Any): ...
@@ -332,7 +332,7 @@ class HttpGitClient(GitClient):
 			path: bytes,
 			update_refs: Any,
 			generate_pack_data: Any,
-			progress: Optional[Any] = ...
+			progress: Optional[Any] = ...,
 			) -> SendPackResult: ...
 
 	def fetch_pack(
@@ -342,7 +342,7 @@ class HttpGitClient(GitClient):
 			graph_walker: Any,
 			pack_data: Any,
 			progress: Optional[Any] = ...,
-			depth: Optional[Any] = ...
+			depth: Optional[Any] = ...,
 			) -> FetchPackResult: ...
 
 	def get_refs(self, path: Any): ...
@@ -352,7 +352,7 @@ def get_transport_and_path_from_url(
 		config: Optional[Any] = ...,
 		*,
 		thin_packs: Any = ...,
-		report_activity: Any = ...
+		report_activity: Any = ...,
 		) -> Tuple[GitClient, Any]: ...
 
 def parse_rsync_url(location: str) -> Tuple[Any, Any, Any]: ...
