@@ -44,7 +44,7 @@ base-classifiers = []
 python-versions = [ "3.6", "3.7", "3.8",]
 python-implementations = [ "CPython",]
 platforms = [ "Windows", "macOS", "Linux",]
-license-key = "Apache2"
+license-key = "Apache 2"
 package = "dulwich-stubs"
 
 [tool.mypy]
